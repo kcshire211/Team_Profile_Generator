@@ -9,48 +9,43 @@ const questions = [
     
     {
         type: 'input',
-        message: "What is the title of the application?",
-        name: 'title',
+        message: "What is the team manager's name?",
+        name: 'manager-name',
 },
 
     {
         type: 'input',
-        message: "What is the title of the application?",
-        name: 'title',
+        message: "What is the manager's Employee ID?",
+        name: 'manager-id',
 },
 
     {
         type: 'input',
-        message: "What is the title of the application?",
-        name: 'title',
+        message: "What is the team manager's email address?",
+        name: 'manager-email',
   },
 
     {
         type: 'input',
-        message: "What is the title of the application?",
-        name: 'title',
+        message: "What is the team manager's office number?",
+        name: 'manager-number',
  },
 
     {
-        type: 'input',
-        message: "What is the title of the application?",
-        name: 'title',
-  },
-    
-    
-
-    {
         type: 'list',
-        message: "Which licesnse will you be using?",
-        name: 'license',
-        choices: ["GPL_3.0","BSD_3","MIT","none"],
-        
+        message: "Add new team member or finish building team:",
+        name: 'team',
+        choices: ["Add Engineer","Add Intern","Finish Building Team"],     
  },
 
 
 
  
 ];
+
+
+//code below from previous hw
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
