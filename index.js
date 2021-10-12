@@ -8,43 +8,8 @@ const inquirer = require('inquirer');
 const jest = require('jest');
 
 const teamMembers = [];
-
+//questions for each job role
 const managerQuestions = [
-    
-    {
-        type: 'input',
-        message: "What is the team manager's name?",
-        name: 'name',
-},
-
-    {
-        type: 'input',
-        message: "What is the manager's Employee ID?",
-        name: 'id',
-},
-
-    {
-        type: 'input',
-        message: "What is the team manager's email address?",
-        name: 'email',
-  },
-
-    {
-        type: 'input',
-        message: "What is the team manager's office number?",
-        name: 'number',
- },
-
-    {
-        type: 'list',
-        message: "Add new team member or finish building team:",
-        name: 'team',
-        choices: ["Add Engineer","Add Intern","Finish Building Team"],     
- },
-
-];
-
-const internQuestions = [
     
     {
         type: 'input',
@@ -83,25 +48,60 @@ const engineerQuestions = [
     
     {
         type: 'input',
-        message: "What is the team manager's name?",
+        message: "What is the engineer's name?",
         name: 'name',
 },
 
     {
         type: 'input',
-        message: "What is the manager's Employee ID?",
+        message: "What is the engineer's Employee ID?",
         name: 'id',
 },
 
     {
         type: 'input',
-        message: "What is the team manager's email address?",
+        message: "What is the engineer's email address?",
         name: 'email',
   },
 
     {
         type: 'input',
         message: "What is the engineer's Github username?",
+        name: 'number',
+ },
+
+    {
+        type: 'list',
+        message: "Add new team member or finish building team:",
+        name: 'team',
+        choices: ["Add Engineer","Add Intern","Finish Building Team"],     
+ },
+
+];
+
+const internQuestions = [
+    
+    {
+        type: 'input',
+        message: "What is the intern's name?",
+        name: 'name',
+},
+
+    {
+        type: 'input',
+        message: "What is the intern's Employee ID?",
+        name: 'id',
+},
+
+    {
+        type: 'input',
+        message: "What is the intern's email address?",
+        name: 'email',
+  },
+
+    {
+        type: 'input',
+        message: "What school does the intern attend?",
         name: 'github',
  },
 
@@ -115,24 +115,17 @@ const engineerQuestions = [
 ];
 
 
-
-
-//code below from previous hw
-
-
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
             return console.log(err);
         }
-
         console.log("Your index.html file has been created")
     });
 
 }
 
-
+//function to add another employee after team manager, or complete the team
 function addNewEmployee(team) {
     if (team === "Add Engineer") {
         inquirer.prompt(engineerQuestions) 
@@ -156,7 +149,7 @@ function addNewEmployee(team) {
     }
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
 
     inquirer.prompt(managerQuestions) 
