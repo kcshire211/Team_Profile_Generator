@@ -7,10 +7,13 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
 
-const OUTPUT = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT, "index.html");
+const express = require("express");
+const app = express();
 
-const renderTeamHTML = require("./src/generateTeam");
+const OUTPUT = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT, "index.html"); //Need these lines? how to use the gererateTeam.js file?
+
+const renderTeamHTML = require("./src/generateTeam");  //Need these lines? how to use the gererateTeam.js file?
 
 
 
@@ -144,24 +147,21 @@ function addNewEmployee(team) {
 
         })    
     } else {
-        console.log("team created")
+        console.log("Team Created!")
+        //trial and error here
+        app.listen(3001, () => {
+            console.log("Application started and Listening on port 3001");
+          });
+          
+          app.use(express.static(__dirname));
+
+          app.get("/", (req, res) => {
+            res.sendFile(__dirname + "/dist/team.html");
+          });
         
         //  ^^^ this is where the html magic is supposed to happen
  
-        //This is from the youtube video, not sure it's doing what I need
-        function onRequest(request, response) {
-            response.writeHead(200, {'Content-Type': 'text/html'});
-            fs.readFile('dist/index.html', null, function(error, data) {
-                if (error) {
-                    response.writeHead(404);
-                    response.write('File not found!');
-                } else {
-                    response.write(data);
-                }
-                response.end();
-            });
-            
-        }
+       
     }
 }
 
