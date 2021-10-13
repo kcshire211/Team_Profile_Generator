@@ -1,11 +1,11 @@
-const Engineer = require("../lib/Intern");
+const Intern = require("../lib/Intern");
 
-test("Does this return a Github user", () => {
+test("Does this return a school attendee", () => {
     const emp = new Intern("Korey", 100, "name.email", "school");
     expect(emp.school).toBe("school");
 });
 
-test("Does this return a Github user", () => {
+test("Does this return a school attendee", () => {
     const emp = new Intern("Korey", 100, "name.email", "school");
     expect(emp.getSchool()).toBe("school");
 });
