@@ -5,9 +5,18 @@ const Manager = require("./lib/Manager")
 
 const fs = require('fs');
 const inquirer = require('inquirer');
-const jest = require('jest');
+const path = require('path');
+
+const OUTPUT = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT, "index.html");
+
+const renderTeamHTML = require("./src/generateTeam");
+
+
+
 
 const teamMembers = [];
+
 //questions for each job role
 const managerQuestions = [
     

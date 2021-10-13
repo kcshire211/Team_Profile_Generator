@@ -2,7 +2,7 @@ const Manager = require("../lib/Manager");
 
 test("Does this return a Github user", () => {
     const emp = new Manager("Korey", 100, "name.email", "officeNumber");
-    expect(emp.github).toBe("GithubUser");
+    expect(emp.github).toBe("officeNumber");
 });
 
 test("Does this return a Github user", () => {

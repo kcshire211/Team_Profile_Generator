@@ -2,7 +2,7 @@ const Engineer = require("../lib/Intern");
 
 test("Does this return a Github user", () => {
     const emp = new Intern("Korey", 100, "name.email", "school");
-    expect(emp.github).toBe("school");
+    expect(emp.school).toBe("school");
 });
 
 test("Does this return a Github user", () => {
