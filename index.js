@@ -114,17 +114,6 @@ const internQuestions = [
 
 ];
 
-//do I need this?
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Your index.html file has been created")
-    });
-
-}
-
 //function to add another employee after team manager, or complete the team
 function addNewEmployee(team) {
     if (team === "Add Engineer") {
@@ -147,7 +136,10 @@ function addNewEmployee(team) {
         })    
     } else {
         console.log("team created")
-        //generate html
+        
+        //  ^^^ this is where the html magic is supposed to happen
+ 
+        //This is from the youtube video, not sure it's doing what I need
         function onRequest(request, response) {
             response.writeHead(200, {'Content-Type': 'text/html'});
             fs.readFile('dist/index.html', null, function(error, data) {
