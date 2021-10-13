@@ -114,7 +114,7 @@ const internQuestions = [
 
 ];
 
-
+//do I need this?
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
@@ -130,6 +130,7 @@ function addNewEmployee(team) {
     if (team === "Add Engineer") {
         inquirer.prompt(engineerQuestions) 
         .then((answers) => {
+            console.log(answers);
             const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
             teamMembers.push(engineer)
             addNewEmployee(answers.team);
@@ -138,6 +139,7 @@ function addNewEmployee(team) {
     } else if(team === "Add Intern") {
         inquirer.prompt(internQuestions) 
         .then((answers) => {
+            console.log(answers);
             const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
             teamMembers.push(intern)
             addNewEmployee(answers.team);
@@ -146,6 +148,19 @@ function addNewEmployee(team) {
     } else {
         console.log("team created")
         //generate html
+        function onRequest(request, response) {
+            response.writeHead(200, {'Content-Type': 'text/html'});
+            fs.readFile('dist/index.html', null, function(error, data) {
+                if (error) {
+                    response.writeHead(404);
+                    response.write('File not found!');
+                } else {
+                    response.write(data);
+                }
+                response.end();
+            });
+            
+        }
     }
 }
 
