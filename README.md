@@ -1,4 +1,6 @@
 # TEAM_PROFILE_GENERATOR
+
+https://watch.screencastify.com/v/gcQn2Sk0bcVj5P2XY7il
   
 ## Table of Contents
 * [Description](#description)
@@ -24,3 +26,8 @@ User runs node index.js to first be prompted by questions about who the manager 
 ## Questions?
 https://github.com/kcshire211/repo.git <br>
 Reach me by email at: <br> korey.cheshire@gmail.com
+
+![image](https://user-images.githubusercontent.com/85852768/137251861-6e00af51-526b-4d01-9d4c-a7b711ab3fa3.png)
+![image](https://user-images.githubusercontent.com/85852768/137251940-a36d0dcf-8648-475b-95a0-1eadd7581638.png)
+
+
