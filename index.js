@@ -13,7 +13,7 @@ const app = express();
 const OUTPUT = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT, "index.html"); //Need these lines? how to use the gererateTeam.js file?
 
-const renderTeamHTML = require("./src/generateTeam");  //Need these lines? how to use the gererateTeam.js file?
+const generateTeam = require("./src/generateTeam");  
 
 
 
@@ -148,7 +148,7 @@ function addNewEmployee(team) {
         })    
     } else {
         console.log("Team Created!")
-        //trial and error here
+    
         app.listen(3001, () => {
             console.log("Application started and Listening on port 3001");
           });
@@ -157,9 +157,10 @@ function addNewEmployee(team) {
 
           app.get("/", (req, res) => {
             res.sendFile(__dirname + "/dist/team.html");
+            
           });
         
-        //  ^^^ this is where the html magic is supposed to happen
+        //  ^^^ HTML page loads, but how to get the answer data and styling?
  
        
     }
