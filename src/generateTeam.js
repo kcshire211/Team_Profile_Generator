@@ -8,7 +8,7 @@ function generateHTMLString(teamMembers) {
         let thirdPTag = ""
         if(teamMember.getRole() === "Manager") {
             thirdPTag = `<p class="card-text">${teamMember.getOfficeNumber()}</p>`
-        } else if(teamMember.getRole()=== "Engineer") {
+        } else if(teamMember.getRole() === "Engineer") {
             thirdPTag = `<p class="card-text">${teamMember.getGithub()}</p>`
         } else {
             thirdPTag = `<p class="card-text">${teamMember.getSchool()}</p>`
@@ -17,10 +17,10 @@ function generateHTMLString(teamMembers) {
         let positionCard = `<div class="card" style="width: 18rem;">
         
         <div class="card-body">
-          <h5 class="card-title">${teamMember.getName()}</h5>
-          <h5 class="card-title">${teamMember.getRole()}</h5>
-          <p class="card-text">${teamMember.getId()}</p>
-          <p class="card-text">${teamMember.getEmail()}</p>
+          <h5 class="card-title">Name: ${teamMember.getName()}</h5>
+          <h5 class="card-title">Role: ${teamMember.getRole()}</h5>
+          <p class="card-text">ID: ${teamMember.getId()}</p>
+          <p class="card-text">Email: <a href= "mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a></p>
             ${thirdPTag}
         </div>
       </div>`
@@ -38,7 +38,7 @@ function generateHTMLString(teamMembers) {
 </head>
 <body>
     
-  <h1>This is where the data gets displayed</h1>
+  <h1 id="project-team">PROJECT TEAM</h1>
     ${allCards}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

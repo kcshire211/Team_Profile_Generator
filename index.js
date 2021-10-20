@@ -11,7 +11,7 @@ const express = require("express");
 const app = express();
 
 const OUTPUT = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT, "team.html"); //Need these lines? how to use the gererateTeam.js file?
+const outputPath = path.join(OUTPUT, "team.html"); 
 
 const {writeFile} = require("./src/utils");  
 
