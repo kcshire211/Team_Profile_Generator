@@ -2,7 +2,7 @@ const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 const Manager = require("./lib/Manager")
 
-
+const generateHTMLString = require("./src/generateTeam")
 const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
@@ -11,10 +11,9 @@ const express = require("express");
 const app = express();
 
 const OUTPUT = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT, "index.html"); //Need these lines? how to use the gererateTeam.js file?
+const outputPath = path.join(OUTPUT, "team.html"); //Need these lines? how to use the gererateTeam.js file?
 
-const generateTeam = require("./src/generateTeam");  
-
+const {writeFile} = require("./src/utils");  
 
 
 
@@ -148,19 +147,11 @@ function addNewEmployee(team) {
         })    
     } else {
         console.log("Team Created!")
-    
-        app.listen(3001, () => {
-            console.log("Application started and Listening on port 3001");
-          });
-          
-          app.use(express.static(__dirname));
-
-          app.get("/", (req, res) => {
-            res.sendFile(__dirname + "/dist/team.html");
-            
-          });
+        let teamString = generateHTMLString(teamMembers)
+        writeFile(teamString) 
         
-        //  ^^^ HTML page loads, but how to get the answer data and styling?
+        
+        
  
        
     }
