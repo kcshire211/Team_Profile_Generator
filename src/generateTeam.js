@@ -12,7 +12,7 @@ function generateHTMLString(teamMembers) {
             thirdPTag = `<p class="card-text">${teamMember.getGithub()}</p>`
         } else {
             thirdPTag = `<p class="card-text">${teamMember.getSchool()}</p>`
-        }
+        };
         
         let positionCard = `<div class="card" style="width: 18rem;">
         
@@ -21,7 +21,7 @@ function generateHTMLString(teamMembers) {
           <h5 class="card-title">Role: ${teamMember.getRole()}</h5>
           <p class="card-text">ID: ${teamMember.getId()}</p>
           <p class="card-text">Email: <a href= "mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a></p>
-            ${thirdPTag}
+          ${thirdPTag}
         </div>
       </div>`
       allCards=allCards+positionCard
